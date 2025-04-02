@@ -151,7 +151,6 @@ footer {
 
 .location iframe {
     border-radius: 10px 25px;
-    ;
 }
 
 .email a {
@@ -196,15 +195,23 @@ footer {
 
     footer {
         padding: 1vw;
+        width: 100%;
         margin-top: 2vw;
     }
-
+    
     .copyright {
         letter-spacing: 0.1vw;
     }
 
     .location {
-        letter-spacing: 0.6vw;
+        letter-spacing: 0.2vw;
+        width: 0.1vw;
     }
-
+    .location iframe{
+        width: 140vw;
+    }
+    .email a{
+        padding: 4px 5px;
+        position: relative;
+    }
 }
