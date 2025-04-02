@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="Utf-8">
+    <meta name="viewport" content="width=device-Width, initial-scale=1.0">
+    <title>Carl.com</title>
+    <link rel="icon" href="./images/icon.jpg">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+</head>
+
+<body>
+    <div class="phead">
+        <nav>
+            <div class="social-call">
+                <div class="social">
+                    <a href="linkedin.com/in/mr-xvien-503409189"><i class="fa fa-linkedin-square"
+                            aria-hidden="true"></i></a>
+
+                </div>
+                <div class="phone"><span>Welcome🫡</span></div>
+            </div>
+        </nav>
+    </div>
+    <div class="cvpdf">
+        <div style="background:white; width: 100%; height: 100vh;">
+            <embed style="width: 98%; height: 100vh;" src="./Résumé.pdf" type="application/pdf"></embed>
+
+        </div>
+    </div>
+    <footer>
+        <div class="crt">
+            <span class="copyright">&copy;doteX.<font>2025 💖</font></span>
+
+        </div>
+        <div class="location">
+            <p>🛖<br><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7941.117511463331!2d-0.13593996043259557!3d5.631954777396605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0xfdf849983684341%3A0x6c2902d726fb93cb!2sSpintex%20Road%2C%20Accra!3m2!1d5.6376136!2d-0.1266064!4m5!1s0xfdf84bea2622d49%3A0x3b62ce55c5959d6b!2sRegimanuel%20Gray%2C%20Real%20Estate%20Developer%20-%20East%20Airport%20Development%2C%2010%20Asanfena%20Cresent%2C%20Accra!3m2!1d5.626295!2d-0.1339608!5e0!3m2!1sen!2sgh!4v1743588461413!5m2!1sen!2sgh"
+                    width="700" height="80" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+        </div>
+        <div class="contact">
+            <div class="email">
+                <a href="mailto:crandolph@obvi8.org" target="_top">SEND A MAIL</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        var pdfUrl = './Résumé.pdf';
+        var pdfViewer = document.getElementById('cvpdf');
+
+        pdfjslib.getDocument(pdfUrl).promise.then(function (pdf) {
+            pdf.getPage(1).then(function (page) {
+                var scale = 1.5;
+                var viewport = page.getViewport({ scale: scale });
+
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                pdfViewer.appendChild(canvas);
+
+                page.render({
+                    canvasContext: context,
+                    viewport: viewport
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
